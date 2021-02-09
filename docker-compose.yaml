@@ -1,0 +1,12 @@
+version: '3'
+services:
+    timescaledb:
+        volumes:
+            - './data/:/var/lib/postgresql/data'
+        container_name: timescaledb
+        ports:
+            - '5432:5432'
+        environment:
+            POSTGRES_PASSWORD: "password"
+            POSTGRES_HOST_AUTH_METHOD: "trust"
+        image: timescale/timescaledb:latest-pg12
