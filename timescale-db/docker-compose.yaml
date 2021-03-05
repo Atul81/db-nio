@@ -10,3 +10,4 @@ services:
             POSTGRES_PASSWORD: "password"
             POSTGRES_HOST_AUTH_METHOD: "trust"
         image: timescale/timescaledb:latest-pg12
+    
