@@ -1,0 +1,7 @@
+version: '3'
+services:
+    redis:
+        volumes:
+            - './data/conf:/usr/local/etc/redis'
+        container_name: redis-cache
+        image: redis:latest

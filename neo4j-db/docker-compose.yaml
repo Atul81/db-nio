@@ -8,3 +8,6 @@ services:
         volumes:
             - './data:/data'
         image: neo4j
+        restart: always
+        environment: 
+            NEO4J_AUTH : neo4j/test
