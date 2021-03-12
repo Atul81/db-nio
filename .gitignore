@@ -1,3 +1,8 @@
 data/
 dataset/
 pgadmin-data/
+kafka-spark/kafka_data
+kafka-spark/zookeeper_data
+openhab/openhab_addons
+openhab/openhab_conf
+openhab/openhab_userdata
