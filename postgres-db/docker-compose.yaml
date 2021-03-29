@@ -3,7 +3,7 @@ services:
     postgresdb:
         volumes:
             - './data/:/var/lib/postgresql/data'
-        container_name: timescaledb
+        container_name: postgresdb
         ports:
             - '5432:5432'
         environment:
@@ -17,7 +17,7 @@ services:
 
     pg-admin:
         image: dpage/pgadmin4:latest
-        container_name: pg-admin
+        container_name: pg-admin-2
         environment:
             PGADMIN_DEFAULT_EMAIL: admin@postgres.com
             PGADMIN_DEFAULT_PASSWORD: password
