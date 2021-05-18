@@ -1,11 +1,11 @@
-# admin:
-#   access_log_path: /tmp/admin_access.log
-#   address:
-#     socket_address: { address: 0.0.0.0, port_value: 9901 }
+admin:
+  access_log_path: /tmp/admin_access.log
+  address:
+    socket_address: { address: 0.0.0.0, port_value: 3000 }
 
 static_resources:
   listeners:
-  - name: listener_0
+  - name: envoy
     address:
       socket_address: { address: 0.0.0.0, port_value: 8080 }
     filter_chains:
@@ -23,7 +23,7 @@ static_resources:
               routes:
               - match: { prefix: "/" }
                 route:
-                  cluster: echo_service
+                  cluster: amp-conf
                   timeout: 0s
                   max_stream_duration:
                     grpc_timeout_header_max: 0s
@@ -39,7 +39,8 @@ static_resources:
           - name: envoy.filters.http.cors
           - name: envoy.filters.http.router
   clusters:
-  - name: echo_service
+
+  - name: amp-conf
     connect_timeout: 0.25s
     type: logical_dns
     http2_protocol_options: {}
@@ -51,5 +52,14 @@ static_resources:
             - endpoint:
                 address:
                   socket_address:
-                    address: amp-io
+                    address: host.docker.internal
                     port_value: 8000
+
+#   - name: amp-conf
+#     connect_timeout: 30s
+#     type: logical_dns
+#     lb_policy: round_robin
+#     http2_protocol_options: {}
+#     hosts: [{ socket_address: { address: 0.0.0.0, port_value: 8000 }}]
+
+                
