@@ -14,8 +14,8 @@ services:
             POSTGRES_HOST_AUTH_METHOD: "trust"
         image: postgres
         restart: 'unless-stopped'
-        networks:
-            - default
+        # networks:
+        #     - default
 
 
     pg-admin:
@@ -30,9 +30,9 @@ services:
         volumes:
             - './pgadmin-data:/var/lib/pgadmin'
         restart : 'unless-stopped'
-        networks:
-            - default
+        # networks:
+        #     - default
         
-networks:
-    default:
-        name: sol-docker
+# networks:
+#     default:
+#         name: sol-docker

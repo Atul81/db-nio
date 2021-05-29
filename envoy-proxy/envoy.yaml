@@ -53,7 +53,7 @@ static_resources:
                 address:
                   socket_address:
                     address: host.docker.internal
-                    port_value: 8000
+                    port_value: 6572
 
 #   - name: amp-conf
 #     connect_timeout: 30s
@@ -61,5 +61,3 @@ static_resources:
 #     lb_policy: round_robin
 #     http2_protocol_options: {}
 #     hosts: [{ socket_address: { address: 0.0.0.0, port_value: 8000 }}]
-
-                
