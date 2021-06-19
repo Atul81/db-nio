@@ -7,7 +7,7 @@
 # curl --output docker-compose.yml https://raw.githubusercontent.com/docker-solr/docker-solr-examples/master/docker-compose/docker-compose.yml
 # docker-compose up
 #
-version: '3.7'
+version: '3.3'
 services:
   solr1:
     image: solr:8.7.0
