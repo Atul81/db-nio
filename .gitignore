@@ -8,3 +8,4 @@ openhab/openhab_addons
 openhab/openhab_conf
 openhab/openhab_userdata
 rabbitmq_data/
+backup/
