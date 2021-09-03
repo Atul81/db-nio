@@ -1,9 +1,7 @@
 version: '3.3'
-services:
-    hivemq4:
-        container_name: 'hivemq'
+services:    
+    client:
+        image: vergissberlin/hivemq-mqtt-web-client
+        restart: always
         ports:
-            - '8080:8080'
-            - '8000:8000'
-            - '1883:1883'
-        image: hivemq/hivemq-ce:latest
+            - 80
