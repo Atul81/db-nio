@@ -3,7 +3,7 @@ services:
     postgresdb:
         volumes:
             - './data/:/var/lib/postgresql/data'
-            - './startup.sql:/docker-entrypoint-initdb.d/startup.sql'
+            # - './startup.sql:/docker-entrypoint-initdb.d/startup.sql'
         container_name: postgresdb
         ports:
             - '5432:5432'
