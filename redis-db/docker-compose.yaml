@@ -6,15 +6,19 @@ services:
         ports: 
             - '6379:6379'
         volumes:
-            - './data/conf:/usr/local/etc/redis'
+            - redis-data:/usr/local/etc/redis
         restart: 'unless-stopped'
     
     insight:
         container_name: insight
         image: 'redislabs/redisinsight:latest'
         volumes:
-            - './insight:/db'
+            - insight-data:/db
         ports:
             - '8001:8001'
         restart: 'unless-stopped'
+
+volumes:
+   redis-data:
+   insight-data:
 

@@ -10,6 +10,7 @@ services:
       - ./prometheus:/etc/prometheus
       - prometheus-data:/prometheus
     command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=45d
+    restart: always
 
   grafana:
     container_name: grafana
@@ -21,7 +22,6 @@ services:
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana-data:/var/lib/grafana
-
   # node-exporter:
   #   image: prom/node-exporter:v1.3.0
   #   container_name: node-exporter
