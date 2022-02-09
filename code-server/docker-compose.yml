@@ -2,6 +2,7 @@ version: '3.7'
 services:
     codeserver:
         image: codercom/code-server
+        restart: always
         container_name: code
         user: coder:coder
         environment:
