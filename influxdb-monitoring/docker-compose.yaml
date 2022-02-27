@@ -17,6 +17,13 @@ services:
     volumes:
       - ./influxdb.conf:/etc/influxdb/influxdb.conf
       - influxdb-data:/var/lib/influxdb
+    environment:
+      - INFLUXDB_DB=proxmox
+      - INFLUXDB_ADMIN_ENABLED=true
+      - INFLUXDB_ADMIN_PASSWORD=password
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_USER=proxmox
+      - INFLUXDB_USER_PASSWORD=password
 
 volumes:
   grafana-data:
